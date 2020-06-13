@@ -1,7 +1,10 @@
 <div id="title-info" class="title-info">
   <div id='site-title' class='site-title'>
     {{ if ( ne .Site.Title "" ) }}
-    <a href="{{ .Site.BaseURL | relLangURL }}"> {{ .Site.Title }} </a>
+    <div class="box">
+      <img src="{{ .Site.BaseURL }}/{{ .Site.Params.logo }}" />
+      <a href="{{ .Site.BaseURL | relLangURL }}"> {{ .Site.Title }} </a>
+    </div>
     {{ end }}</div>
   </div>
   <button id="toggle-navigation" class="toggle-navigation">
@@ -10,10 +13,6 @@
 
   <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
   <div id="menu-primary" class="menu-container menu-primary" role="navigation">
-    {{ with .Site.Params.Slogan }}
-    <p class="site-description">{{ . | default "" | safeHTML }}</p>
-    {{ end }}
-
     <div class="menu">
       <ul id="menu-primary-items" class="menu-primary-items">
         {{ $page := . }}

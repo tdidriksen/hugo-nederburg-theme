@@ -24,7 +24,7 @@
 
         {{ end }}
         <div class="entry-meta">
-          <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
+          <span class="date">{{ .Date.Format "02 January 2006" }}</span>	<span> / </span>
 
           <span class="author">
             <a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
@@ -42,7 +42,7 @@
 
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'> {{ .Title }}</h1>
+          <h1 class='entry-title'> {{ .Title | safeHTML }}</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">

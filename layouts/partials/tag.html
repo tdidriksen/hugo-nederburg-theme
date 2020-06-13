@@ -36,6 +36,7 @@
 
 						{{ if and (isset .Site.Params "author") .Site.Params.author }}
 
+						<span> / </span>
 						<span class="author">
 							{{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
 							<a href="{{ .Site.Params.authorLink | default "" | absURL }}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>
@@ -54,7 +55,7 @@
 					</div>
 							<div class='excerpt-header'>
 								<h2 class='excerpt-title'>
-									<a href="{{ .Permalink }} "> {{ .Title }} </a>
+									<a href="{{ .Permalink }} "> {{ .Title | safeHTML }} </a>
 								</h2>
 							</div>
 							<div class='excerpt-content'>
