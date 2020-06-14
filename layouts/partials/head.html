@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 {{ partial "schema" . }}
 
-<title>{{ .Title }}</title>
+<title>{{ .Site.Params.title }}</title>
 
 {{ if .Description }}<meta name="description" content="{{ .Description }}" />
 {{ else }}<meta name="description" content="{{ .Site.Params.description }}" />
